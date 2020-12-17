@@ -60,12 +60,14 @@ public class GoogleRestController {
 
     @GetMapping("/validated/get-title")
     public ResponseEntity<String> getTitleValidated() {
-        return new ResponseEntity<String>(this.googleService.getTitleDoc(connection), HttpStatus.OK);
+        return new ResponseEntity<String>(this.googleService.getTitleDoc(connection, Global.DOCUMENT_ID),
+                HttpStatus.OK);
     }
 
     @GetMapping("validate/get-title")
     public ResponseEntity<String> getTitleValidate() {
-        return new ResponseEntity<String>(this.googleService.getTitleDoc(connection), HttpStatus.OK);
+        return new ResponseEntity<String>(this.googleService.getTitleDoc(connection, Global.DOCUMENT_ID),
+                HttpStatus.OK);
     }
 
     @GetMapping("/validated/createDoc")
